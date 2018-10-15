@@ -1,20 +1,37 @@
-def lousy_plasma0():
+import string
+import random
 
-    thesaurus = { "happy": "glad", "sad"  : "bleak" }
+def remove_punctuation(var):
+    no_punct = ""
+    punctuation =  '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    for item in var: 
+        if item not in punctuation:
+            no_punct += item + " " 
+    return no_punct
 
-    input1 = input("what is your sentence?").lower().strip()
+def lousy_plasma():
+
+    thesaurus = { "happy": ["GLAD", "BLISSFUL", "ECSTATIC"], "sad"  : ["BLEAK", "BLUE", "DEPRESSED"], "baby": ["FOOL","INFANT"], "bad": ["BADNESS","EVIL","FETOR","UNCLEANESS","WRONG"], "blood":["FOP","KILLING","FLUIDITY"]}
+
+    input1 = input("what is your sentence?").strip()
 
     words = input1.split(" ")
+    remove_punctuation(words)    
+
+    list1 = []
 
     for item in words:
-        if item == "happy":
-            words.replace("happy", "GLAD", 100)
-        elif item == "sad":
-            words.replace("sad", "BLEAK", 100)
+        if item not in thesaurus.keys():
+            list1.append(item)
+        else:
+            values = thesaurus.get(item)
+            list1.append(random.choice(values))
+    list1.join()
+
     
 
-    print(words)
+    print(list1)
    
 
-
-lousy_plasma0()
+ 
+lousy_plasma()
