@@ -10,21 +10,21 @@ def remove_punctuation(var):
 
 
 t = open('thesaurus', 'r')
-dict1 = { "happy": ["GLAD", "BLISSFUL", "ECSTATIC"], "sad"  : ["BLEAK", "BLUE", "DEPRESSED"], "baby": ["FOOL","INFANT"], "bad": ["BADNESS","EVIL","FETOR","UNCLEANESS","WRONG"], "blood":["FOP","KILLING","FLUIDITY"]}
+dict1 = {}
 for line in t:
     split_words = line.split(",")
     key = split_words.pop([0])
-    syn = {split_words[0]:split_words - split_word[0]}
-    print(syn)
-    break
+    dict1.update({key:split_words)
 
 
 def lousy_plasma():
 
     empty_string = ""          
     input1 = input("what is your sentence?").strip()
-    input1 = input1.split()
+    print(input1)
     input1 = remove_punctuation(input1).split()
+    print(input1)
+    return
     for item in input1:
         if item in dict1.keys():
             empty_string += random.choice(dict1[item]) + " "
@@ -36,4 +36,3 @@ def lousy_plasma():
 
  
 lousy_plasma()
-
