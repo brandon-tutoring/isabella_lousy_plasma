@@ -23,12 +23,16 @@ def lousy_plasma():
     input1 = input("what is your sentence?").strip()
     input1 = remove_punctuation(input1).split()
 
+
     for item in input1:
         if item in dict1.keys():
-            empty_string += random.choice(dict1[item]) + " "
+            empty_string += random.choice(dict1[item]).upper() + " "
+            
         else:
             empty_string += item + " "
     print(empty_string)
+    from os import system
+    system("say -i -v Fiona " + "\"" + empty_string + "\"")
     
 
 
